@@ -1,6 +1,7 @@
 const express = require("express");
 
 const {
+  auth,
   contactValidation,
   ctrlWrapper,
   isValidId,
@@ -16,12 +17,13 @@ const { contacts: ctrl } = require("../../controllers");
 
 const router = express.Router();
 
-router.get("/", ctrlWrapper(ctrl.listContacts));
+router.get("/", auth, ctrlWrapper(ctrl.getAllContacts));
 
 router.get("/:contactId", isValidId, ctrlWrapper(ctrl.getContactById));
 
 router.post(
   "/",
+  auth,
   contactValidation(postJoiContactSchema),
   ctrlWrapper(ctrl.addContact)
 );

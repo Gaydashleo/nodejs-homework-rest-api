@@ -16,4 +16,10 @@ router.post(
   ctrlWrapper(ctrl.register)
 );
 
+router.post(
+  "/login",
+  contactValidation(loginJoiSchema),
+  ctrlWrapper(ctrl.login)
+);
+
 module.exports = router;

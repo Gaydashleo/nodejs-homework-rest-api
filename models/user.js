@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-// import * as  from ("schema-types");
 
 const emailRegexp =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -25,10 +24,11 @@ const userSchema = Schema(
       type: String,
       default: null,
     },
-    // owner: {
-    //   type: SchemaTypes.ObjectId,
-    //   ref: "user",
-    // },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+      // required: true,
+    },
   },
   { version: false, timestamps: true }
 );
