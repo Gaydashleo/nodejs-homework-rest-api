@@ -1,9 +1,10 @@
 const express = require("express");
 
 const {
+  auth,
   contactValidation,
   ctrlWrapper,
-  isValidId,
+  // isValidId,
 } = require("../../middlewares");
 const { auth: ctrl } = require("../../controllers");
 const { registerJoiSchema, loginJoiSchema } = require("../../joiSchemas.js");
@@ -21,5 +22,7 @@ router.post(
   contactValidation(loginJoiSchema),
   ctrlWrapper(ctrl.login)
 );
+
+router.get("/logout", auth, ctrlWrapper(ctrl.logout));
 
 module.exports = router;
