@@ -11,7 +11,7 @@ const {
   postJoiContactSchema,
   putJoiContactSchema,
   favoriteJoiSchema,
-} = require("../../joiSchemas.js");
+} = require("../../joiSchemas.js/index.js");
 
 const { contacts: ctrl } = require("../../controllers");
 
@@ -19,7 +19,7 @@ const router = express.Router();
 
 router.get("/", auth, ctrlWrapper(ctrl.getAllContacts));
 
-router.get("/:contactId", isValidId, ctrlWrapper(ctrl.getContactById));
+router.get("/:contactId", auth, isValidId, ctrlWrapper(ctrl.getContactById));
 
 router.post(
   "/",
@@ -37,11 +37,12 @@ router.put(
 
 router.patch(
   "/:contactId/favorite",
+  auth,
   isValidId,
   contactValidation(favoriteJoiSchema),
   ctrlWrapper(ctrl.updateFavorite)
 );
 
-router.delete("/:contactId", ctrl.removeContact);
+router.delete("/:contactId", auth, ctrl.removeContact);
 
 module.exports = router;

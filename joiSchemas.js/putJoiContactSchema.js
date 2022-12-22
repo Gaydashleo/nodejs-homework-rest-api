@@ -6,7 +6,7 @@ const putJoiContactSchema = Joi.object({
   phone: Joi.string()
     .regex(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/)
     .optional(),
-  favorite: Joi.boolean(),
+  favorite: Joi.boolean().optional(),
 });
 
-module.export = putJoiContactSchema;
+module.exports = putJoiContactSchema;

@@ -3,6 +3,7 @@ const putJoiContactSchema = require("./putJoiContactSchema");
 const favoriteJoiSchema = require("./favoriteJoiSchema");
 const registerJoiSchema = require("./registerJoiSchema");
 const loginJoiSchema = require("./registerJoiSchema");
+const subscriptionJoiSchema = require("./subscriptionJoiSchema");
 
 module.exports = {
   postJoiContactSchema,
@@ -10,4 +11,5 @@ module.exports = {
   favoriteJoiSchema,
   registerJoiSchema,
   loginJoiSchema,
+  subscriptionJoiSchema,
 };
