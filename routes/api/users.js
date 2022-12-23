@@ -1,5 +1,5 @@
 const express = require("express");
-const { subscriptionJoiSchema } = require("../../joiSchemas.js");
+const { subscriptionJoiSchema } = require("../../joiSchemas");
 
 const { auth, ctrlWrapper, contactValidation } = require("../../middlewares");
 const { users: ctrl } = require("../../controllers");

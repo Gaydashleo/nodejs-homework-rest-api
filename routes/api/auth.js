@@ -7,7 +7,10 @@ const {
   // isValidId,
 } = require("../../middlewares");
 const { auth: ctrl } = require("../../controllers");
-const { registerJoiSchema, loginJoiSchema } = require("../../joiSchemas.js");
+const {
+  registerJoiSchema,
+  loginJoiSchema,
+} = require("../../joiSchemas/index.js");
 
 const router = express.Router();
 
