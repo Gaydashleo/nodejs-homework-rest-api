@@ -8,13 +8,7 @@ const updateFavorite = async (req, res) => {
     res.status(400).json(`missing field favorite`);
   }
 
-  const result = await Contact.findByIdAndUpdate(
-    contactId,
-    { favorite },
-    {
-      new: true,
-    }
-  );
+  const result = await Contact.findByIdAndUpdate(contactId, favorite);
   res.status(200).json({ result });
 };
 
