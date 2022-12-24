@@ -10,7 +10,7 @@ const {
   postJoiContactSchema,
   putJoiContactSchema,
   favoriteJoiSchema,
-} = require("../../joiSchemas/index.js");
+} = require("../../joiSchemas");
 
 const { contacts: ctrl } = require("../../controllers");
 

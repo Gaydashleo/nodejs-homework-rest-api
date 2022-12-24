@@ -1,9 +1,13 @@
-const postJoiContactSchema = require("./postJoiContactSchema");
-const putJoiContactSchema = require("./putJoiContactSchema");
-const favoriteJoiSchema = require("./favoriteJoiSchema");
-const registerJoiSchema = require("./registerJoiSchema");
-const loginJoiSchema = require("./registerJoiSchema");
-const subscriptionJoiSchema = require("./subscriptionJoiSchema");
+const {
+  postJoiContactSchema,
+  putJoiContactSchema,
+  favoriteJoiSchema,
+} = require("./contactJoiSchema");
+const {
+  registerJoiSchema,
+  loginJoiSchema,
+  subscriptionJoiSchema,
+} = require("./userJoiSchema");
 
 module.exports = {
   postJoiContactSchema,

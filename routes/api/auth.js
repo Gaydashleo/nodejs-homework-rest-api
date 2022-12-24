@@ -1,16 +1,8 @@
 const express = require("express");
 
-const {
-  auth,
-  contactValidation,
-  ctrlWrapper,
-  // isValidId,
-} = require("../../middlewares");
+const { auth, contactValidation, ctrlWrapper } = require("../../middlewares");
 const { auth: ctrl } = require("../../controllers");
-const {
-  registerJoiSchema,
-  loginJoiSchema,
-} = require("../../joiSchemas/index.js");
+const { registerJoiSchema, loginJoiSchema } = require("../../joiSchemas");
 
 const router = express.Router();
 
