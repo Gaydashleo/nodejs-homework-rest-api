@@ -6,7 +6,7 @@ const getAllContacts = async (req, res) => {
   const skip = (page - 1) * limit;
 
   if (favorite) {
-    const filterContacts = await Contact.find(
+    const favoriteContacts = await Contact.find(
       {
         owner: _id,
         favorite: true,
@@ -14,7 +14,7 @@ const getAllContacts = async (req, res) => {
       "name email phone favorite owner",
       { skip, limit: Number(limit) }
     );
-    res.status(200).json({ filterContacts });
+    res.status(200).json({ favoriteContacts });
   }
 
   const contacts = await Contact.find(
