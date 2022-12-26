@@ -1,8 +1,6 @@
 const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
-// const multer = require("multer");
-// const path = require("path");
 
 require("dotenv").config();
 
@@ -18,24 +16,7 @@ const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
-
-// const tempDir = path.join(__dirname, "temp");
-
-// const multerConfig = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, tempDir);
-//   },
-//   filename: (req, file, cb) => {
-//     cb(null, file.originalname);
-//   },
-//   limits: {
-//     filesize: 2048,
-//   },
-// });
-
-// const upload = multer({
-//   storage: multerConfig,
-// });
+app.use(express.static("public"));
 
 app.use("/api/auth", authRouter);
 app.use("/api/users", usersRouter);
