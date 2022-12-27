@@ -16,13 +16,12 @@ const register = async (req, res) => {
     email,
     password: hashPassword,
     subscription,
-    avatarURL
+    avatarURL,
   });
 
   res.status(201).json({
     email: result.email,
     subscription: result.subscription,
-    avatarURL:result.avatarURL
   });
 };
 
