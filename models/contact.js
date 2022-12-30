@@ -1,4 +1,6 @@
 const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
 
 const contactSchema = Schema(
   {
